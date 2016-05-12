@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebThoiTrang.Models.product
+<ul class="breadcrumb">
+    <li><a href="/Shop/index">Shop</a></li>
+    <li><a href="/Shop/Detail">Detail</a></li>
+    <li><a href="/Shop/Detail/@Model.productID">@Model.productID</a></li>
+</ul>
+<div class="container row">
+    <div class="col-sm-4">
+        <img src="@Url.Content(Model.productImage)" class="img-responsive" />
+    </div>
+    <div class="col-sm-8">
+        <div>
+            <h2>@Model.productName</h2>
+        </div>
+        <div>
+            <p>Giá: <span>@Model.price</span></p>
+        </div>
+        @using (Html.BeginForm("addOrder", "Shop", FormMethod.Post))
+        {
+            <div>
+                <label>Màu sắc: </label>
+                @Html.DropDownList("Color", Model.ColoursDrop)
+            </div>
+            <div>
+                <label>Kích thước: </label>
+                @Html.DropDownList("Size", Model.SizesDrop)
+            </div>
+            <div>
+                <label>Số lượng</label>
+                @Html.TextBox("Quanity", 1)
+            </div>
+            <div>
+                <input class="btn btn-default" type="submit" value="Add To Cart" />
+            </div>
+        }
+    </div>
+</div>

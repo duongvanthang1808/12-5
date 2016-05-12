@@ -1,0 +1,92 @@
+﻿
+<nav class="navbar navbar-default" style="background-color:transparent;margin:0;border:0">
+    <div class="Container-fluid nav nav-tabs">
+        <ul class="nav navbar-nav">
+            <li><a href="/index">HOME</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/Products">
+                    PRODUCT
+                    <b class="caret"></b>
+                </a>
+
+                <div class="dropdown-menu">
+                    <div class="dropdown-left">
+                        <div class="row">
+                            <div class="col-sm-4 listDown">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><b>Products</b></li>
+                                    <li class="list-group-item"><img src="~/Content/images/brum.jpg" /></li>
+                                    <li class="list-group-item">
+                                        Áo thun 1 <br />
+                                        Áo thun 1 <br />
+                                        Áo thun 1
+                                    </li>
+                                    <li class="list-group-item"><a>All Products</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 listDown">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><b>Products</b></li>
+                                    <li class="list-group-item"><img src="~/Content/images/brum.jpg" /></li>
+                                    <li class="list-group-item">
+                                        Áo thun 1 <br />
+                                        Áo thun 1 <br />
+                                        Áo thun 1
+                                    </li>
+                                    <li class="list-group-item"><a>All Products</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 listDown">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><b>Products</b></li>
+                                    <li class="list-group-item"><img src="~/Content/images/brum.jpg" /></li>
+                                    <li class="list-group-item">
+                                        Áo thun 1 <br />
+                                        Áo thun 1 <br />
+                                        Áo thun 1
+                                    </li>
+                                    <li class="list-group-item"><a>All Products</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="dropdown-right">
+                        <p>
+                            <b>COLLECTION </b><br>
+                            Originals Blue <br>
+                            Originals by Jeremy Scott<br>
+                            Stellasport
+                        </p>
+                    </div>
+
+                </div>
+            </li>
+            <li><a href="/About">ABOUT US</a></li>
+            <li><a>CONTACT</a></li>
+            <li><a><span class="glyphicon glyphicon-search"></span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" style="margin-right:20px;overflow:hidden">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<script>
+    $(document).ready(function () {
+        $('.widget-container').hide();
+        $('.first-link').mouseover(function () {
+            $('.widget-container').show();
+        });
+        $('.first-link').mouseleave(function () {
+            $('.widget-container').hide();
+        });
+
+        var wdwidth = $(window).width();
+        $(".dropdown-menu").css("width", wdwidth);
+
+    });
+
+</script>

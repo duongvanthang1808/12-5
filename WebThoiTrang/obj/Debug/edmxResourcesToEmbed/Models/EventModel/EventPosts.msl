@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventModelStoreContainer" CdmEntityContainer="EventsEntities">
+    <EntitySetMapping Name="TBO_EVENT">
+      <EntityTypeMapping TypeName="EventModel.TBO_EVENT">
+        <MappingFragment StoreEntitySet="TBO_EVENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TITTLE" ColumnName="TITTLE" />
+          <ScalarProperty Name="DATE_RELEASE" ColumnName="DATE_RELEASE" />
+          <ScalarProperty Name="SUMARY" ColumnName="SUMARY" />
+          <ScalarProperty Name="ARTICLE" ColumnName="ARTICLE" />
+          <ScalarProperty Name="IMAGE_URL" ColumnName="IMAGE_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

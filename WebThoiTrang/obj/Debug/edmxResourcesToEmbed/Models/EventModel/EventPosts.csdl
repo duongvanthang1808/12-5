@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EventsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="TBO_EVENT" EntityType="EventModel.TBO_EVENT" />
+  </EntityContainer>
+  <EntityType Name="TBO_EVENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TITTLE" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="DATE_RELEASE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SUMARY" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ARTICLE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IMAGE_URL" Type="String" MaxLength="200" Unicode="false" FixedLength="false" Nullable="true" />
+  </EntityType>
+</Schema>

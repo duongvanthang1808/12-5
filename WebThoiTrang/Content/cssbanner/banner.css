@@ -1,0 +1,42 @@
+﻿.clear{
+    clear:both;
+}
+.banner{
+    float:left;
+    margin:auto 0px;
+    margin-left:40px;
+    margin-top:5px;
+}
+.moduleslide1 ,.moduleslide2,.moduleslide3{
+	float:left;
+	width:370px;
+	position:relative;
+    margin-left:15px;
+}
+.moduleslide1 ,.moduleslide2,.moduleslide3 img{
+	max-height:503px;
+	max-width:370px;
+}
+
+.slide_main{
+	height:503px;
+	width:370px;
+	background:white;
+}
+
+.slide_main_item{
+	width: 370px;
+    height: 503px;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    z-index: 1;
+    visibility: visible;
+	transition:all 2s linear;
+}
+
+.slide_main img{
+	position:absolute;
+	top:0;
+	left:0;
+}

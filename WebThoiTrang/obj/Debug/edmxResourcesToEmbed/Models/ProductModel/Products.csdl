@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProductsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="categories" EntityType="ProductModel.category" />
+    <EntitySet Name="products" EntityType="ProductModel.product" />
+    <AssociationSet Name="FK_shirt_categories" Association="ProductModel.FK_shirt_categories">
+      <End Role="categories" EntitySet="categories" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="Int32" Nullable="false" />
+    <Property Name="categoryName" Type="String" MaxLength="30" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="products" Relationship="ProductModel.FK_shirt_categories" FromRole="categories" ToRole="product" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="productID" />
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="productID" Type="Int32" Nullable="false" />
+    <Property Name="product_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="colors" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="sizes" Type="String" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="product_image" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="categoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="category" Relationship="ProductModel.FK_shirt_categories" FromRole="product" ToRole="categories" />
+  </EntityType>
+  <Association Name="FK_shirt_categories">
+    <End Role="categories" Type="ProductModel.category" Multiplicity="1" />
+    <End Role="product" Type="ProductModel.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categories">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

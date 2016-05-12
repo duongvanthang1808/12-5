@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion Blog</title>
+    <meta charset="UTF-8">
+    <script src="~/Scripts/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+    <link href="~/Content/bootstrap-3.3.6-dist/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/font-awesome-4.6.2/css/font-awesome.min.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="Container">
+        <div>
+            <div class="text-center" style="border-bottom:0.5px solid rgba(0,0,0,0.2)">
+                <h1>Team 16's Shop</h1>
+            </div>
+            @Html.Partial("NavBar")
+        </div>
+        <!-- //banner -->
+        <style>
+            @@media (min-width:768px)
+            {
+                #wrapper{
+                padding:0px 50px;
+                width:100%;
+                min-width:1210px;
+                }
+            }
+        </style>
+        <div class="container" id="wrapper">
+            @RenderBody()
+        </div>
+        @Html.Partial("Footer")
+    </div>
+</body>
+</html>

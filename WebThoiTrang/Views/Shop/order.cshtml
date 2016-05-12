@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebThoiTrang.Models;
+<section id="destination">
+			@Html.ActionLink("Trang Chủ","index","Home")
+			<span>></span>
+			@Html.ActionLink("Mua Sắm","index","Shop")
+            <span>></span>
+			<a href="">Giỏ Hàng</a>
+		</section>
+<section class="ordered-product-area">
+    <table class="single-ordered-product-area">
+        <caption>Giỏ Hàng Của Bạn</caption>
+    <tr >
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Mã sản phẩm</th>
+        <th>Màu sắc</th>
+        <th>Size</th>
+        <th>Sô lượng</th>
+        <th>Xóa khỏi giỏ hàng</th>
+    </tr>
+
+        @{
+            var total = 0;
+            }
+@foreach(product_odered p in ViewBag.lists){
+    var x = p.product_Ordered.price;
+    var y = p.Quanity;
+    var total1=x*y;
+    total+=(int)total1;
+    <tr>
+        <td><p>@p.product_Ordered.product_name</p></td>
+        <td><p>@p.product_Ordered.price</p></td>
+        <td><p>@p.product_Ordered.productID</p></td>
+        <td><p>@p.Color</p></td>
+        <td><p>@p.Size</p></td>
+        <td><p>@p.Quanity</p></td>
+        <td>@Html.ActionLink("Xóa", "delete", new { id = p.product_Ordered.productID, categoryID = p.product_Ordered.categoryID }, new { id="delete_order",onclick="delete_Order()"})</td>
+    </tr>
+}
+     <tr>
+         <td colspan="6" style="text-align:center;font-size:19px;font-weight:600">Tổng tiền: @total<span></span></td>
+         <td>@Html.ActionLink("Tiếp tục mua hàng","index","Shop")</td>
+     </tr>
+     </table>
+</section>

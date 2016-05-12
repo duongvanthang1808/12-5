@@ -1,0 +1,476 @@
+#banner{
+	width: 100%;
+	height:auto;
+	position: relative;
+	overflow: hidden;
+}
+#slide-image{
+	width: 100%;
+	height:500px;
+	position: relative;
+	overflow: hidden;
+}
+#slide-image ul{
+	width: 500%;
+	height:100%;
+	position: relative;
+	left:0;
+	transition: left .8s cubic-bezier(0.5,0.7,0.5,1);
+}
+#slide-image ul li{
+	width: 20%;
+	height: 100%;
+	overflow: hidden;
+	float: left;
+}
+#slide-image li .img{
+	height: 100%;
+	width: 100%;
+	-webkit-transition: 0.5s -webkit-filter linear;
+	background-size: cover;
+}
+.buttons{
+	position: absolute;
+	bottom: 20px;
+	left: 45%;
+	z-index: 1000;
+	cursor: pointer;
+}
+#button-1{
+	margin-left: 0;
+}
+#button-2{
+	margin-left: 20px;
+}
+#button-3{
+	margin-left: 40px;
+}
+#button-4{
+	margin-left: 60px;
+}
+#button-5{
+	margin-left: 80px;
+}
+#banner:hover label.arrows{
+	opacity: 0.9;
+	background-color: white;
+	border-radius: 50%;
+}
+#banner:hover>#slide-image .img{
+	opacity:.93;
+}
+label.arrows{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 1000;
+	top:50%;
+	display: none;
+	opacity: 0.5;
+	-webkit-transition-property: right,left;
+	-webkit-transition-duration: .3s;
+	-webkit-transition-timing-function: ease-out;
+}
+.arrows img{
+	width: 30px;
+	height: 50px;
+	background-color: transparent;
+	margin-left: 25%;
+	margin-top: 5px;
+}
+#arrow-1{
+	margin-left: 0;
+}
+#arrow-2{
+	margin-left: 30px;
+}
+#arrow-3{
+	margin-left: 60px;
+}
+#arrow-4{
+	margin-left: 90px;
+}
+#arrow-5{
+	margin-left: 120px;
+}
+/*event*/
+#button-1:checked~.arrows#arrow-2,
+#button-2:checked~.arrows#arrow-3,
+#button-3:checked~.arrows#arrow-4,
+#button-4:checked~.arrows#arrow-5{
+	display: block;
+	right:-70px;
+}
+#button-2:checked~.arrows#arrow-1,
+#button-3:checked~.arrows#arrow-2,
+#button-4:checked~.arrows#arrow-3,
+#button-5:checked~.arrows#arrow-4{
+	display: block;
+	left:-70px;
+	transform: scaleX(-1);
+}
+#banner:hover>.buttons#button-1:checked~.arrows#arrow-2,
+#banner:hover>.buttons#button-2:checked~.arrows#arrow-3,
+#banner:hover>.buttons#button-3:checked~.arrows#arrow-4,
+#banner:hover>.buttons#button-4:checked~.arrows#arrow-5{
+	right:5px;
+}
+#banner:hover>.buttons#button-2:checked~.arrows#arrow-1,
+#banner:hover>.buttons#button-3:checked~.arrows#arrow-2,
+#banner:hover>.buttons#button-4:checked~.arrows#arrow-3,
+#banner:hover>.buttons#button-5:checked~.arrows#arrow-4{
+	left:5px;
+}
+#button-3:checked~#arrow-2{
+	margin-left: 0;
+}
+#button-4:checked~#arrow-3{
+	margin-left: 0;
+}
+#button-5:checked~#arrow-4{
+	margin-left: 0;
+}
+input[type=radio]#button-1:checked~#slide-image>ul { 
+	left: 0px;
+}
+input[type=radio]#button-2:checked~#slide-image>ul{
+	left:-100%;
+}
+input[type=radio]#button-3:checked~#slide-image>ul{
+	left:-200%;
+}
+input[type=radio]#button-4:checked~#slide-image>ul{
+	left:-300%;
+}
+input[type=radio]#button-5:checked~#slide-image>ul{
+	left:-400%;
+}
+/*Mid content*/
+#mid-content{
+	width: 100%;
+	height:auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+section#article{
+	width: 750px;
+	height:auto;
+	float:left;
+	position: relative;
+	*padding:0px 0 15px 0;
+	display: block;
+}
+aside{
+	width: 240px;
+	border: 1px solid black;
+	height:auto;
+	float: right;
+	display: block;
+	height:600px;
+}
+/*Article*/
+h2.categories{
+	display: block;
+	height: 35px;
+	width: 100%;
+	text-align: left;
+	padding-top: 5px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 26px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h2.categories:hover{
+	color:blue;
+}
+section#model-post-area, section#event-post-area{
+	position: relative;
+	width: 100%;
+	display: block;
+	height: auto;
+	clear: both;
+	margin-bottom: 20px;
+}
+section#event-post-area{
+	border-bottom: 0.5px solid #D0D0D0;
+}
+/*main-post*/
+section#article article.main-post{
+	width: 100%;
+	height:350px;
+	position: relative;
+}
+section#event-post-area article.main-post{
+	width: 100%;
+}
+article.main-post div.image-main-post{
+	width: 750px;
+	height: 350px;
+	z-index: 1000;
+	background-size: cover;
+	display: block;
+}
+section#event-post-area article.main-post div.image-main-post{
+	display: block;
+	float: left;
+	height:400px;
+}
+/*--------------------------------------------------------*/
+section#event-post-area div.info-main-event{
+	position: relative;
+	float:left;
+	width: 264px;
+	height: 400px;
+	margin-left: 4px;
+}
+section#article article.main-post div.tittle-main-post-area{
+	width: 300px;
+	position: absolute;
+	top: 0px;
+	height: 50px;
+	left: 0px;
+	background-color: #383838;
+	opacity: .2;
+	z-index: 1001;
+	-webkit-transition:width 0.5s ease-in,height 0.5s ease-in 0.5s;
+	-moz-transition:width 0.5s ease-in,height 0.5s ease-in 0.5s;
+}
+section#article article.main-post div.tittle-main-post{
+	position: absolute;
+	left: 10px;
+	top: 9px;
+	height: 40px;
+	z-index: 1002;
+	width: 290px;
+	color:#F8F8F8 ;
+	border-bottom: 1px solid #585858 ;
+}
+section#article article.main-post div.tittle-main-post a{
+	font-weight: 500;
+	font-size:25px;
+	color: #F8F8F8;
+}
+section#article article.main-post ul.info-main-post{
+	width: 290px;
+	position: absolute;
+	bottom: 0px;
+	height: 280px;
+	left: 0px;
+	z-index: 1001;
+	padding-top: 20px;
+	color: #F8F8F8;
+	opacity: 0;
+	padding-left: 10px;
+	-webkit-transition:opacity 0.7s linear 0.5s;
+	-moz-transition:opacity 0.7s linear 0.5s;
+}
+section#article article.main-post ul.info-main-post li{
+	margin-bottom: 10px;
+}
+section#article article.main-post:hover ul.info-main-post{
+	opacity: 1;
+}
+section#article article.main-post:hover div.tittle-main-post-area{
+	height: 100%;
+	width: 450px;
+	opacity: 0.5;
+}
+/*main-post*/
+/*extra-post*/
+section#article section.extra-post-area{
+	position: relative;
+	width: 100%;
+	height:200px;
+	margin-top: 5px;
+	border-right:0.5px solid #D0D0D0;
+	border-left:0.5px solid #D0D0D0;
+}
+section#event-post-area section.extra-post-area{
+	position: relative;
+	width: 100%;
+	height: 750px;
+	margin-top: 5px;
+	clear: both;
+}
+section#event-post-area section.extra-post-area article{
+	width: 325px;
+	height:340px;
+	margin: 10px 10px 10px 0px;
+	float:left;
+	position: relative;
+}
+section#article section.extra-post-area article{
+	width: 170px;
+	height:180px;
+	margin:10px 0 0 12px;
+	float:left;
+	position: relative;
+	cursor: pointer;
+	border:1px solid #787878;
+}
+section#model-post-area section.extra-post-area div{
+	width: 100%;
+	height:100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 1000;
+	position: absolute;
+	transition: width,height 0.3s ease-in;
+}
+section#event-post-area section.extra-post-area div{
+	width: 100%;
+	height:250px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 1000;
+	position: relative;
+	margin-bottom: 5px;
+}
+section#article section.extra-post-area h3{
+	width: 100%;
+	height:40%;
+	bottom: 0px;
+	background-color: #383838;
+	position: absolute;
+	z-index: 1002;
+	opacity: 0.5;
+}
+section#article section.extra-post-area a{
+	position: absolute;
+	top: 140px;
+	font-weight: 500;
+	font-size: 25px;
+	text-align: center;
+	width: 100%;
+	color: white;
+}
+section#event-post-area section.extra-post-area h3{
+	font-size: 19px;
+}
+#tittle-main-event-post{
+	width: 100%;
+	height:auto;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.article-summary{
+	font-size: 18px;
+	color: #686868;
+}
+.readmore{
+	color: blue;
+}
+section#article section.extra-post-area article.post-1 .tittle-post-1,
+section#article section.extra-post-area article.post-2 .tittle-post-2,
+section#article section.extra-post-area article.post-3 .tittle-post-3,
+section#article section.extra-post-area article.post-4 .tittle-post-4{
+	display: none;
+}
+section#article section.extra-post-area article.post-1:hover .tittle-post-1,
+section#article section.extra-post-area article.post-2:hover .tittle-post-2,
+section#article section.extra-post-area article.post-3:hover .tittle-post-3,
+section#article section.extra-post-area article.post-4:hover .tittle-post-4{
+	display: block;
+	width: 200px;
+	left:-14px;
+	bottom: -28px;
+}
+section#article section.extra-post-area article.post-1:hover a,
+section#article section.extra-post-area article.post-2:hover a,
+section#article section.extra-post-area article.post-3:hover a,
+section#article section.extra-post-area article.post-4:hover a{
+	display: block;
+}
+section#article section.extra-post-area article.post-1:hover div,
+section#article section.extra-post-area article.post-2:hover div,
+section#article section.extra-post-area article.post-3:hover div,
+section#article section.extra-post-area article.post-4:hover div{
+	z-index: 1002;
+	width: 200px;
+	height: 210px;
+	left:-15px;
+	top:-2px;
+	border:1px solid #585858 ;
+}
+section#article section.extra-post-area article a{
+	position: absolute;
+	bottom: 5px;
+	opacity: 1;
+	z-index: 1002;
+	font-weight: bold;
+	display: none;
+	margin-left: -10px;
+}
+section#model-post-area a.readmore{
+	position: relative;
+	display: block;
+	width: 100px;
+	text-align: center;
+	margin-top: 5px;
+	left:650px;
+	margin-bottom: 5px;
+}
+section#event-post-area a.readmore{
+	position: relative;
+	display: block;
+	width: 100px;
+	text-align: center;
+	margin-top: 5px;
+	left:920px;
+	margin-bottom: 5px;
+}
+/*Shopping*/
+section#product-post-area{
+	width:100%;
+	position: relative;
+	border:0.5px solid #d0d0d0;
+	height:350px;
+}
+div#go-shopping{
+	width: 300px;
+	height: 300px;
+	display: block;
+	border-top: 0.5px solid #D0d0d0;
+	border-right: 0.5px solid #D0d0d0;
+	display: block;
+	float: left;
+	position: relative;
+}
+section#extra-product-post-area{
+	width: 700px;
+	height: 295px;
+	display:  block;
+	float: left;
+	margin-left: 10px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+section#extra-product-post-area article.post-product{
+	width: 160px;
+	height: 140px;
+	border:1px solid #D0d0d0;
+	display: inline-block;
+}
+section#extra-product-post-area article.post-product:hover{
+	opacity: .8;
+}
+section#extra-product-post-area article.post-product div.image-post-product{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+section#product-post-area div#go-shopping a{
+	font-size: 18px;
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	color: blue;
+	text-align: center;
+}
+/*Shopping*/

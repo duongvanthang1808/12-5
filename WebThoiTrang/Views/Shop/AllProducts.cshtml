@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebThoiTrang.Models;
+
+@{
+    List<List<product>> Pants = (List<List<product>>)ViewBag.listPants;
+    List<List<product>> Shirts = (List<List<product>>)ViewBag.listShirts;
+}
+<ul class="breadcrumb">
+    <li><a href="/Shop/Index">Shop</a></li>
+    <li><a href="/Shop/AllProducts">All Products</a></li>
+</ul>
+<div>
+    <div class="pants-area">
+        <div class="header-product">
+            <a href="/Shop/Products/Pants/1"><h3>Pants</h3></a>
+        </div>
+        <div id="product-area" class="container" style="width:100%">
+            @{
+            for (int i = 0; i < Pants.Count; i++)
+            {
+                <div class="row">
+                    @foreach (var pant in Pants[i])
+                    {
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <a href="/Shop/Detail/@pant.productID"><img class="img-responsive img-thumbnail" data-id="@Url.Content(pant.productImage)" data-toggle="modal" data-target="#img-modal" src="@Url.Content(pant.productImage)" alt="@pant.productName" title="@pant.productName" /></a>
+                                <p class="title text-center">@pant.productName</p>
+                                <p>@pant.price</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            }
+        </div>
+    </div>
+    <div class="shirts-area">
+        <div class="header-product">
+            <a href="/Shop/Products/Shirts/1"><h3>Shirts</h3></a>
+        </div>
+        <div id="product-area" class="container" style="width:100%">
+            @{
+            for (int i = 0; i < Shirts.Count; i++)
+            {
+                <div class="row">
+                    @foreach (var shirt in Shirts[i])
+                    {
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <a href="/Shop/Detail/@shirt.productID"><img class="img-responsive img-thumbnail" data-id="@Url.Content(shirt.productImage)" data-toggle="modal" data-target="#img-modal" src="@Url.Content(shirt.productImage)" alt="@shirt.productName" title="@shirt.productName" /></a>
+                                <p class="title text-center">@shirt.productName</p>
+                                <p>@shirt.price</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+<style type="text/css">
+    .col-sm-4 {
+        padding: 10px 25px;
+    }
+    .text-center {
+        color: black;
+        font-size: 14px;
+    }
+
+    .thumbnail {
+        background-color: transparent;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        border:0;
+    }
+
+    .img-thumbnail {
+        border: none;
+        background-color: transparent;
+        max-height:400px;
+    }
+    .thumbnail:hover{
+       box-shadow: 0 0 20px rgba(0,0,0,.15);
+    }
+</style>
+
+
+
+
+
+
+
+
+
+@*<div class="Container">
+        <div>
+            @foreach (WebThoiTrang.Models.product p in Model)
+            {
+                <div>
+                    <a href=@Url.Content("~/Shop/Detail/"+p.categoryID+"/"+p.productID)><img class="image-product" src='@Url.Content(p.productImage)' alt="Lỗi hiển thị" title="Xem chi tiết sản phẩm" /></a>
+                    <div>
+                        <p>@p.productName</p>
+                        <p>@p.price</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+            <ul class="pagination">
+                @Html.PagedListPager(Model, page => Url.Action("Shirt", new { page }))
+            </ul>
+        </div>
+    </div>*@

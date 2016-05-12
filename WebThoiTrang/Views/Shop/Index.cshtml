@@ -1,0 +1,167 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="banner">
+    <link href="~/Content/cssbanner/banner.css" rel="stylesheet" />
+    @*<!-- banner Slider starts Here -->
+    <link href="~/Content/ResponsiveSlides.js/responsiveslides.css" rel="stylesheet" />
+    <script src="~/Content/ResponsiveSlides.js/responsiveslides.min.js"></script>
+    <script>
+                $(function () {
+                    $(".rslides").responsiveSlides({
+                        auto: true,             // Boolean: Animate automatically, true or false
+                        speed: 1000,            // Integer: Speed of the transition, in milliseconds
+                        timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+                        pager: false,           // Boolean: Show pager, true or false
+                        nav: false,             // Boolean: Show navigation, true or false
+                        random: false,          // Boolean: Randomize the order of the slides, true or false
+                        pause: false,           // Boolean: Pause on hover, true or false
+                        pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+                        prevText: "Previous",   // String: Text for the "previous" button
+                        nextText: "Next",       // String: Text for the "next" button
+                        maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+                        navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+                        manualControls: "",     // Selector: Declare custom pager navigation
+                        namespace: "rslides",   // String: Change the default namespace used
+                        before: function () { },   // Function: Before callback
+                        after: function () { }     // Function: After callback
+                    });
+                    $(".rslides").responsiveSlides();
+                });
+    </script>
+    <!--//End-slider-script -->
+    <ul class="rslides">
+        <li><img src='@Url.Content("~/Content/images/1.jpg")' alt=""></li>
+        <li><img src='@Url.Content("~/Content/images/3.jpg")' alt=""></li>
+        <li><img src='@Url.Content("~/Content/images/4.jpg")' alt=""></li>
+        <li><img src='@Url.Content("~/Content/images/5.jpg")' alt=""></li>
+        <li><img src='@Url.Content("~/Content/images/6.jpg")' alt=""></li>
+    </ul>*@
+    <div class="col-md-4 moduleslide1">
+        <div class="slide_main">
+
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide1.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide2.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide3.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide4.jpg"></img>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                var a1 = $('.moduleslide1 .slide_main_item');
+                a1[0].style.opacity = "1";
+
+                var x = 1;
+                var temp = 0;
+
+                setInterval(function () {
+
+                    a1[x].style.opacity = "1";
+                    a1[temp].style.opacity = "0";
+
+                    temp = x;
+                    x++;
+
+                    if (x == a1.length) x = 0;
+                }, 3500);
+            });
+
+
+        </script>
+
+
+
+    </div>
+
+
+    <div class="col-md-4 moduleslide2">
+        <div class="slide_main">
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide5.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide6.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide7.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide8.jpg"></img>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                var a1 = $('.moduleslide2 .slide_main_item');
+                a1[0].style.opacity = "1";
+
+                var x = 1;
+                var temp = 0;
+
+                setInterval(function () {
+
+                    a1[x].style.opacity = "1";
+                    a1[temp].style.opacity = "0";
+
+                    temp = x;
+                    x++;
+
+                    if (x == a1.length) x = 0;
+                }, 3000);
+            });
+
+
+        </script>
+    </div>
+
+    <div class="col-md-4 moduleslide3">
+        <div class="slide_main">
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide10.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide5.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide6.jpg"></img>
+            </div>
+            <div class="slide_main_item">
+                <img src="~/Content/images/slide/slide1.jpg"></img>
+            </div>
+        </div>
+
+        <script>
+            $(function () {
+                var a1 = $('.moduleslide3 .slide_main_item');
+                a1[0].style.opacity = "1";
+
+                var x = 1;
+                var temp = 0;
+
+                setInterval(function () {
+
+                    a1[x].style.opacity = "1";
+                    a1[temp].style.opacity = "0";
+
+                    temp = x;
+                    x++;
+
+                    if (x == a1.length) x = 0;
+                }, 3200);
+            });
+
+
+        </script>
+
+    </div>
+</div>
+<div class="clear"></div>
+<div class="container">
+    <h2>This is homepage</h2>
+</div>

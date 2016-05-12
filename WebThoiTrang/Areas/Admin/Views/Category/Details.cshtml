@@ -1,0 +1,24 @@
+﻿@model WebThoiTrang.Models.category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ProductCategory</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.categoryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoryName)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.categoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
